@@ -1,0 +1,27 @@
+
+Approch: 
+
+   1. make storage of ((requirment size) * (blocks size)).
+   2. traverse that 
+      -  if any requirment is already true so make that 0 in storage
+      -  else find in one index back & forward and put minimum of them
+   3. make new array and for ith index store total distance travel from ith block to 
+      complete requirment.    
+
+
+DRY RUN :
+
+step1: 
+     - make recored array 
+     - initialize it with ((reqs.size) * (blocks.size)) INT_MAX .
+step2:
+    - traverse left to right on block 
+       > if at ith block requirment is true store 0 (as no distance is travel by us to full fill requirment)
+       > else store minimum distance travel by (i-1)th block for that requirment
+    - traverse right to left on block 
+       > Store minimum of (i+1)th block & ith block for same requirment
+step3:
+    - decleare new array result 
+    - Store ith index with total distance travel from ith block to complete all requirment.
+step4: 
+    - return index which have minimum value 

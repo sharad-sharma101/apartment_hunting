@@ -28,9 +28,9 @@ function apartmentHunting(blocks, reqs) {
     let result = []
         
     for(let i = 0; i < blocks.length; i++){
-        let maxDist = -1e9;
+        let maxDist = 0;
         for(let req of reqs)
-            maxDist = Math.max(maxDist, recored[req][i]);
+            maxDist +=  recored[req][i] ;
         result[i] = maxDist;
     }
 
